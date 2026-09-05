@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>~*~ my corner of the internet ~*~</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      filter: hue-rotate(0deg);
+      animation: disco 15s linear infinite;
+    }
+
+    @keyframes disco {
+      to {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: "Comic Sans MS", "Comic Sans", cursive, sans-serif;
+      background-color: #0a0033;
+      background-image: url("3564.19.jpg") repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 3px),
+        repeating-linear-gradient(45deg, rgba(255, 0, 200, 0.06) 0 2px, transparent 2px 22px),
+        repeating-linear-gradient(-45deg, rgba(77, 208, 225, 0.06) 0 2px, transparent 2px 22px),
+        repeating-conic-gradient(from 0deg, rgba(255, 225, 77, 0.04) 0deg 10deg, transparent 10deg 20deg);
+      color: #1d8036;
+      overflow-x: hidden;
+      cursor: default;
+    }
+
+    ::-webkit-scrollbar {
+      width: 16px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #119564;
+      border-left: 2px solid #eccd35;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: repeating-linear-gradient(45deg, #ff0000, #e60404 6px, #5d1ae2 6px, #ffe14d 12px);
+      border: 2px solid #ffffff9c;
+    }
+
+    @keyframes blinker {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .blink {
+      animation: blinker 0.5s steps(1) infinite;
+    }
+
+    .blink-fast {
+      animation: blinker 0.5s steps(1) infinite;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, #fff, transparent),
+        radial-gradient(2px 2px at 140px 80px, #fff, transparent),
+        radial-gradient(1px 1px at 90px 40px, #fff, transparent),
+        radial-gradient(1px 1px at 200px 150px, #fff, transparent),
+        radial-gradient(2px 2px at 260px 60px, #fff, transparent),
+        radial-gradient(1px 1px at 320px 200px, #fff, transparent);
+      background-repeat: repeat;
+      background-size: 340px 240px;
+      animation: drift 60s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes drift {
+      from {
+        background-position: 0 0;
+      }
+
+      to {
+        background-position: -340px 240px;
+      }
+    }
+
+    .sparkle-row {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      font-size: 20px;
+      letter-spacing: 10px;
+      padding: 6px 0;
+      color: #ffe14d;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .construction {
+      position: relative;
+      z-index: 3;
+      background: repeating-linear-gradient(45deg, #ffe14d 0 20px, #111 20px 40px);
+      color: #111;
+      font-weight: bold;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 3px solid #fff;
+    }
+
+    .construction span {
+      background: #111;
+      color: #ffe14d;
+      padding: 2px 10px;
+      border: 1px dashed #ffe14d;
+    }
+
+    .autoplay-warning {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      background: #111;
+      color: #69f0ae;
+      font-size: 11px;
+      padding: 4px 0;
+      font-family: "Courier New", monospace;
+      border-bottom: 1px solid #444;
+    }
+
+    header {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 6vw, 56px);
+      margin: 0;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #ff3d9a, #ffe14d, #69f0ae, #4dd0e1, #b388ff, #ff3d9a);
+      background-size: 400% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: glitter 6s linear infinite;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    @keyframes glitter {
+      to {
+        background-position: 400% 0;
+      }
+    }
+
+    .subtitle {
+      color: #b8f2ff;
+      font-size: 14px;
+      margin-top: 8px;
+      font-family: "Times New Roman", serif;
+    }
+
+    .stamp {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      color: #ffe14d;
+      border: 2px solid #ffe14d;
+      padding: 3px 8px;
+      transform: rotate(-4deg);
+    }
+
+    .last-updated {
+      margin-top: 6px;
+      font-size: 11px;
+      color: #ff3d9a;
+      font-family: "Courier New", monospace;
+    }
+
+    marquee.tagline {
+      color: #ff3d9a;
+      background: rgba(0, 0, 0, 0.35);
+      border-top: 2px dashed #ffe14d;
+      border-bottom: 2px dashed #ffe14d;
+      padding: 6px 0;
+      font-size: 13px;
+      margin: 14px 0 0;
+    }
+
+    marquee.awards {
+      color: #111;
+      background: repeating-linear-gradient(90deg, #ffe14d 0 40px, #ff3d9a 40px 80px);
+      padding: 5px 0;
+      font-size: 12px;
+      font-weight: bold;
+      border-bottom: 3px double #fff;
+    }
+
+    marquee.chaos {
+      color: #69f0ae;
+      background: #111;
+      padding: 5px 0;
+      font-size: 14px;
+      font-weight: bold;
+      border-top: 2px solid #69f0ae;
+      border-bottom: 2px solid #69f0ae;
+    }
+
+    hr.rainbow {
+      border: none;
+      height: 5px;
+      background: linear-gradient(90deg, #ff3d9a, #ffe14d, #69f0ae, #4dd0e1, #b388ff);
+      background-size: 300% 100%;
+      animation: glitter 4s linear infinite;
+      margin: 26px auto;
+      max-width: 720px;
+    }
+
+    .aim-widget {
+      max-width: 260px;
+      margin: 0 auto 16px;
+      background: #ece9d8;
+      border: 2px solid #0a246a;
+      color: #111;
+      font-family: Tahoma, Verdana, sans-serif;
+      font-size: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .aim-titlebar {
+      background: linear-gradient(90deg, #0a246a, #3a6ea5);
+      color: #fff;
+      font-weight: bold;
+      padding: 3px 6px;
+      font-size: 11px;
+    }
+
+    .aim-body {
+      padding: 8px;
+    }
+
+    .aim-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .aim-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3fbf3f;
+      box-shadow: 0 0 4px #3fbf3f;
+      animation: blinker 1.6s steps(1) infinite;
+    }
+
+    .aim-add {
+      display: inline-block;
+      margin-top: 6px;
+      background: #d4d0c8;
+      border: 1px outset #fff;
+      padding: 3px 8px;
+      font-size: 11px;
+      color: #111;
+      text-decoration: none;
+    }
+
+    .aim-add:active {
+      border-style: inset;
+    }
+
+    .now-playing {
+      max-width: 340px;
+      margin: 0 auto 16px;
+      background: #111;
+      border: 2px solid #69f0ae;
+      color: #69f0ae;
+      font-family: "Courier New", monospace;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .np-btn {
+      background: transparent;
+      border: 1px solid #69f0ae;
+      color: #69f0ae;
+      font-family: inherit;
+      font-size: 14px;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .np-track {
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+    }
+
+    .np-track span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: np-scroll 8s linear infinite;
+    }
+
+    @keyframes np-scroll {
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .space {
+      position: relative;
+      z-index: 1;
+      height: 640px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+    .sprite-link {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      color: #fff;
+      animation: float 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    .sprite-link:nth-child(2) {
+      animation-duration: 7.5s;
+      animation-delay: -1s;
+    }
+
+    .sprite-link:nth-child(3) {
+      animation-duration: 5.2s;
+      animation-delay: -3s;
+    }
+
+    .sprite-link:nth-child(4) {
+      animation-duration: 8s;
+      animation-delay: -2s;
+    }
+
+    .sprite-link:nth-child(5) {
+      animation-duration: 6.6s;
+      animation-delay: -4s;
+    }
+
+    .sprite-link:nth-child(6) {
+      animation-duration: 7s;
+      animation-delay: -0.5s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-14px) rotate(3deg);
+      }
+    }
+
+    .planet {
+      width: 84px;
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 0 0 rgba(255, 225, 77, 0));
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .planet svg {
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+
+    .planet svg.pixel-art {
+      image-rendering: pixelated;
+    }
+
+    .sprite-link:hover .planet,
+    .sprite-link:focus-visible .planet {
+      transform: scale(1.15) rotate(-6deg);
+      filter: drop-shadow(0 0 10px rgba(255, 225, 77, 0.85));
+    }
+
+    .label {
+      font-size: 13px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 3px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      white-space: nowrap;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+      position: relative;
+    }
+
+    .sprite-link:hover .label,
+    .sprite-link:focus-visible .label {
+      opacity: 1;
+    }
+
+    .label .new-flair {
+      position: absolute;
+      top: -10px;
+      right: -22px;
+      background: #ff3d9a;
+      color: #fff;
+      font-size: 9px;
+      font-weight: bold;
+      padding: 1px 4px;
+      border-radius: 4px;
+      border: 1px solid #fff;
+    }
+
+    .label .new-flair.alt {
+      background: #69f0ae;
+      color: #111;
+      left: -22px;
+      right: auto;
+    }
+
+    .sprite-link:focus-visible {
+      outline: 3px solid #ffe14d;
+      outline-offset: 4px;
+      border-radius: 12px;
+    }
+
+    .p1 {
+      top: 50%;
+      left: 20%;
+    }
+
+    .p2 {
+      top: 12%;
+      left: 42%;
+    }
+
+    .p3 {
+      top: 20%;
+      left: 57%;
+    }
+
+    .p4 {
+      top: 10%;
+      left: 8%;
+    }
+
+    .p5 {
+      top: 52%;
+      left: 62%;
+    }
+
+    .p6 {
+      top: 60%;
+      left: 60%;
+    }
+
+    .walker {
+      position: fixed;
+      bottom: 12px;
+      left: -10vw;
+      width: 32px;
+      height: 32px;
+      z-index: 5;
+      pointer-events: none;
+      animation: walk-across 16s linear infinite;
+    }
+
+    .walker svg {
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+    @keyframes walk-across {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(120vw);
+      }
+    }
+
+    .bouncer {
+      position: fixed;
+      width: 46px;
+      height: 46px;
+      z-index: 6;
+      pointer-events: none;
+    }
+
+    .bouncer svg {
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+    .skills {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+    }
+
+    .skill-card {
+      scroll-margin-top: 30px;
+      background: #1a0050;
+      border-style: groove;
+      border-width: 4px;
+      border-color: #b388ff;
+      padding: 20px 24px;
+      margin-bottom: 26px;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .skill-card h2 {
+      margin: 0 0 8px;
+      color: #ffe14d;
+      font-size: 20px;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: #e0e0ff;
+      font-size: 14px;
+      line-height: 1.6;
+      font-family: "Times New Roman", serif;
+    }
+
+    .links {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #4dd0e1;
+    }
+
+    .hot-tag {
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      background: #ff3d3d;
+      color: #fff;
+      font-weight: bold;
+      font-size: 11px;
+      padding: 2px 8px;
+      border: 1px solid #fff;
+      transform: rotate(6deg);
+    }
+
+    .buttonbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 640px;
+      margin: 0 auto 26px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .web88 {
+      width: 88px;
+      height: 31px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 9px;
+      line-height: 1.2;
+      font-family: "MS Sans Serif", Tahoma, sans-serif;
+      border: 1px solid #000;
+      box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #666;
+      color: #fff;
+      padding: 2px;
+    }
+
+    .top8 {
+      max-width: 640px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      padding: 0 20px;
+    }
+
+    .top8 h2 {
+      color: #ffe14d;
+      text-align: center;
+      font-size: 20px;
+    }
+
+    .top8-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .top8-card {
+      background: #1a0050;
+      border: 3px ridge #4dd0e1;
+      padding: 8px 4px;
+      text-align: center;
+      font-size: 10px;
+      color: #b8f2ff;
+    }
+
+    .top8-card .avatar {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 4px;
+    }
+
+    .top8-card .avatar svg {
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+    }
+
+    .guestbook {
+      max-width: 500px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 2;
+      background: #1a0050;
+      border: 4px ridge #ffe14d;
+      padding: 16px 20px;
+    }
+
+    .guestbook h2 {
+      color: #ffe14d;
+      font-size: 18px;
+      margin-top: 0;
+    }
+
+    .gb-entries {
+      list-style: none;
+      margin: 0 0 14px;
+      padding: 0;
+    }
+
+    .gb-entries li {
+      background: rgba(255, 255, 255, 0.06);
+      border-left: 3px solid #4dd0e1;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+      font-size: 13px;
+      color: #e0e0ff;
+    }
+
+    .gb-entries b {
+      color: #ff3d9a;
+    }
+
+    .gb-form {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .gb-form input,
+    .gb-form textarea {
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      padding: 6px;
+      border: 2px inset #888;
+      background: #fff;
+      color: #111;
+    }
+
+    .gb-form button {
+      align-self: flex-start;
+      background: #ff3d9a;
+      color: #fff;
+      font-weight: bold;
+      border: 3px outset #fff;
+      padding: 6px 14px;
+      cursor: pointer;
+    }
+
+    .gb-form button:active {
+      border-style: inset;
+    }
+
+    .gb-error {
+      color: #ff8a80;
+      font-size: 12px;
+      display: none;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 20px 20px 60px;
+      font-size: 11px;
+      color: #b8f2ff;
+    }
+
+    .counter {
+      display: inline-flex;
+      gap: 2px;
+      background: #111;
+      border: 3px ridge #888;
+      padding: 6px 8px;
+      margin: 10px 0;
+    }
+
+    .counter span {
+      font-family: "Courier New", monospace;
+      background: #300;
+      color: #ff3d3d;
+      font-size: 20px;
+      font-weight: bold;
+      padding: 2px 4px;
+      text-shadow: 0 0 6px #ff3d3d;
+    }
+
+    .badges {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0;
+    }
+
+    .badge {
+      border: 2px solid #ffe14d;
+      padding: 4px 8px;
+      font-size: 10px;
+      color: #ffe14d;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .webring {
+      margin-top: 16px;
+    }
+
+    .webring a {
+      color: #ff3d9a;
+      margin: 0 6px;
+      text-decoration: none;
+    }
+
+    .webring a:hover {
+      text-decoration: underline;
+    }
+
+    .guestbook-btn {
+      display: inline-block;
+      margin-top: 16px;
+      background: #ff3d9a;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 16px;
+      border: 3px outset #fff;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .guestbook-btn:active {
+      border-style: inset;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html,
+      .sprite-link,
+      .stars,
+      h1,
+      hr.rainbow,
+      .blink,
+      .blink-fast,
+      .walker,
+      .np-track span,
+      .bouncer {
+        animation: none !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .space {
+        height: 520px;
+      }
+
+      .planet {
+        width: 64px;
+        height: 64px;
+      }
+
+      .top8-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="stars" aria-hidden="true"></div>
+
+  <div class="sparkle-row" aria-hidden="true">✦ ★ ✧ ☆ ✦ ★ ✧ ☆ ✦ ★ ✧ ☆</div>
+
+  <div class="construction" aria-hidden="true">
+    <span class="blink">★ UNDER CONSTRUCTION ★</span>&nbsp;&nbsp;this page is always a work in progress, just like
+    me&nbsp;&nbsp;<span class="blink">★ UNDER CONSTRUCTION ★</span>
+  </div>
+  <div class="autoplay-warning">🔊 turn your speakers up — this site is best experienced with chiptunes</div>
+
+  <header>
+    <h1>welcome 2 my world</h1>
+    <p class="subtitle">click a planet to explore a skill · best viewed with the sound on</p>
+    <span class="stamp blink-fast">est. 2026 · refresh often</span>
+    <p class="last-updated">last updated: <span class="blink">08/26/2026</span> · optimized for 800×600</p>
+  </header>
+
+  <marquee class="tagline">✧ just a guy w various things going on ✧ ui/ux design ✧ always learning something new ✧ scroll down or
+    click a planet ✧</marquee>
+  <marquee class="awards" direction="right">🏆 site of the day 🏆 ★ certified 100% radical ★ template made in mania and w claude ★
+    hand coded with love ★</marquee>
+  <marquee class="chaos" scrollamount="8">⚡ WOW ⚡ OMG ⚡ HOT HOT HOT ⚡ this page has EVERYTHING ⚡ click around, it's
+    safe, mostly ⚡</marquee>
+
+  <div class="aim-widget">
+    <div class="aim-titlebar">buddy list</div>
+    <div class="aim-body">
+      <div class="aim-status">
+        <span class="aim-dot" aria-hidden="true"></span>
+        <span><b>Craydon Maloney (LinkedIn)</b> is online</span>
+      </div>
+      <a class="aim-add" href="https://www.linkedin.com/in/craydon-maloney-25a347205/">+ add to buddy list</a>
+      <b>
+
+
+      </b>
+      <div class="aim-status">
+        <span class="aim-dot" aria-hidden="true"></span>
+        <span><b>yeetmaster137</b> is also online</span>
+      </div>
+      <a class="aim-add" href="https://www.chess.com/member/yeetmaster137">+ add to buddy list</a>
+
+    </div>
+  </div>
+
+  <div class="now-playing">
+    <audio controls loop autoplay>
+      <source src="massobeats-gingersweet.mp3" type="audio/mpeg">
+      Your browser doesn't support the audio element.
+    </audio>
+  </div>
+
+
+  <h2 class="sr-only">Interactive map of skills shown as floating planets and sprites you can click, each linking to a
+    section further down the page.</h2>
+
+  <nav class="space" aria-label="Skills, shown as clickable planets and sprites">
+    <a class="sprite-link p1" href="#skill-code">
+      <div class="planet" aria-hidden="true">
+        <svg viewBox="0 0 84 84">
+          <ellipse cx="42" cy="46" rx="40" ry="10" fill="none" stroke="#ffe14d" stroke-width="4" opacity="0.85"
+            transform="rotate(-15 42 46)" />
+          <circle cx="42" cy="42" r="26" fill="#ff6b6b" />
+          <circle cx="30" cy="34" r="6" fill="#c62828" opacity="0.6" />
+          <circle cx="52" cy="50" r="4" fill="#c62828" opacity="0.5" />
+        </svg>
+      </div>
+      <span class="label">code<span class="new-flair alt blink">HOT</span></span>
+    </a>
+    <!--<a class="sprite-link p2" href="#skill-design">
+      <div class="planet" aria-hidden="true"><span class="art" data-sprite="alien"></span></div>
+      <span class="label">design<span class="new-flair blink">NEW</span></span>
+    </a>-->
+    <a class="sprite-link p3" href="#skill-data">
+      <div class="planet" aria-hidden="true">
+        <svg viewBox="0 0 84 84">
+          <defs>
+            <clipPath id="clipB">
+              <circle cx="42" cy="42" r="30" />
+            </clipPath>
+          </defs>
+          <circle cx="42" cy="42" r="30" fill="#b388ff" />
+          <g clip-path="url(#clipB)">
+            <rect x="0" y="16" width="84" height="6" fill="#9575cd" />
+            <rect x="0" y="28" width="84" height="9" fill="#7e57c2" opacity="0.75" />
+            <rect x="0" y="48" width="84" height="5" fill="#9575cd" />
+            <rect x="0" y="58" width="84" height="8" fill="#673ab7" opacity="0.6" />
+          </g>
+        </svg>
+      </div>
+      <span class="label">data</span>
+    </a>
+    <a class="sprite-link p4" href="#skill-writing">
+      <div class="planet" aria-hidden="true"><span class="art" data-sprite="rocket"></span></div>
+      <span class="label">writing<span class="new-flair alt blink">WOW</span></span>
+    </a>
+    <!--<a class="sprite-link p5" href="#skill-music">
+      <div class="planet" aria-hidden="true"><span class="art" data-sprite="ufo"></span></div>
+      <span class="label">audio<span class="new-flair blink">NEW</span></span>
+    </a>-->
+    <a class="sprite-link p6" href="#skill-3d">
+      <div class="planet" aria-hidden="true">
+        <svg viewBox="1 1 84 84">
+          <circle cx="42" cy="42" r="28" fill="#ffd54f" />
+          <circle cx="32" cy="30" r="5" fill="#f2b705" opacity="0.6" />
+          <circle cx="50" cy="45" r="7" fill="#f2b705" opacity="0.5" />
+          <circle cx="40" cy="55" r="4" fill="#f2b705" opacity="0.6" />
+          <circle cx="55" cy="28" r="3" fill="#f2b705" opacity="0.5" />
+        </svg>
+      </div>
+      <span class="label">3d art<span class="new-flair alt blink">CRAZY</span></span>
+    </a>
+  </nav>
+
+  <hr class="rainbow" aria-hidden="true">
+
+  <main class="skills">
+    <section class="skill-card" id="skill-code">
+      <span class="hot-tag blink">HOT!</span>
+      <h2>💻 code</h2>
+      <p>view my Github for a random assortment of projects *heart* </p>
+          <a class="links" href="https://github.com/craydin">general github</a>,
+          <a class="links" href="https://github.com/craydin/GIS_portfolio">my gis repo</a>
+    </section>
+
+    <section class="skill-card" id="skill-data">
+      <h2>🪐 data</h2>
+      <p>I don't have many of my analytics projects uploaded yet (i still need to update my gitbub hehe). For now, you can enjoy this funky site I found:</p>
+      <a class="links" href="https://www.cameronsworld.net"> funky site (not mine but I was inspired by this)</a>
+    </section>
+    <section class="skill-card" id="skill-writing">
+      <span class="hot-tag blink">WOW!</span>
+      <h2>🚀 writing</h2>
+      <p>A link to some of my proudest writing works uploaded to my substrack (i didn't want to pay for a professional portfolio site and don't have time to make one rn)</p>
+      <a class="links" href="https://substack.com/@craydonmaloney?utm_source=user-menu">substrack</a>
+    </section>
+    <section class="skill-card" id="skill-3d">
+      <h2>🌕 3d art</h2>
+      <p>A link to my artstation, where you can find most of my 3D art projects in high definition :0</p>
+      <a class="links" href="https://www.artstation.com/mehgaming1014"> my Art station acc for 3d projects</a>
+    </section>
+  </main>
+
+  <div class="buttonbar" aria-hidden="true">
+    <div class="web88" style="background:#0a246a;">netscape<br>now!</div>
+    <div class="web88" style="background:#7e57c2;">made with<br>notepad</div>
+    <div class="web88" style="background:#c62828;">best viewed<br>in any browser</div>
+    <div class="web88" style="background:#2e7d32;">powered by<br>dial-up</div>
+    <div class="web88" style="background:#ef6c00;">html<br>valid-ish</div>
+    <div class="web88" style="background:#ad1457;">no flash<br>required</div>
+    <div class="web88" style="background:#00838f;">webring<br>member</div>
+  </div>
+
+  <div class="sparkle-row" aria-hidden="true">✦ ★ ✧ ☆ ✦ ★ ✧ ☆ ✦ ★ ✧ ☆</div>
+
+  <div class="top8">
+    <h2>✧ top 8 friends ✧</h2>
+    <div class="top8-grid" id="top8Grid"></div>
+  </div>
+
+  <hr class="rainbow" aria-hidden="true">
+
+  <div class="guestbook">
+    <h2>📖 sign my guestbook</h2>
+    <ul class="gb-entries" id="gbEntries">
+      <li><b>shroomybaby123:</b> ur cyberfungi paper on substrack is hella cool</li>
+      <li><b>vlegitperson:</b> v cool u should get hired or something</li>
+      <li><b>anon:</b> excited to see evrything eventually!!</li>
+
+    </ul>
+
+
+    <form class="gb-form" id="gbForm">
+      <input type="text" id="gbName" placeholder="your name or handle" maxlength="40">
+      <textarea id="gbMessage" rows="2" placeholder="leave a nice message..." maxlength="200"></textarea>
+      <span class="gb-error" id="gbError">say something first!</span>
+      <button type="submit">sign it ✧</button>
+    </form>
+
+    <script>
+      document.getElementById("gbForm").onsubmit = function(new_message){
+        new_message.preventDefault();
+        let name = document.getElementById("gbName").value.trim() || "anon";
+        let message = document.getElementById('gbMessage').value.trim() || "isn't craydon the best?";
+    
+        if (message) {
+          document.getElementById("gbEntries").innerHTML =
+            `<li><b>${name}: </b>${message}</li>` + document.getElementById("gbEntries").innerHTML
+        }
+        this.reset();
+
+
+      };
+    </script>
+  </div>
+
+  <footer>
+    <p>you are visitor number</p>
+    <div class="counter" aria-hidden="true" id="hitCounter">
+      <span>0</span><span>0</span><span>4</span><span>2</span><span>0</span><span>0</span>
+    </div>
+    <div class="badges">
+      <span class="badge">best viewed 800×600</span>
+      <span class="badge">100% hand coded html</span>
+      <span class="badge">no cookies, only vibes</span>
+      <span class="badge">click anywhere for sparkles</span>
+    </div>
+    <nav class="webring" aria-label="Webring navigation, placeholder">
+      ⟨ <a href="#">prev site</a> | <a href="#">webring hub</a> | <a href="#">random</a> | <a href="#">next site</a> ⟩
+    </nav>
+    <br>
+    <a class="guestbook-btn" href="#skill-code">back to top ↑</a>
+  </footer>
+
+  <div class="walker" aria-hidden="true" id="walker"></div>
+  <div class="bouncer" aria-hidden="true" id="bouncer"></div>
+
+  <script>
+    var GRIDS = {
+      alien: {
+        color: "#4dd0e1", rows: [
+          "00100000100", "00010001000", "00111111100", "01101110110",
+          "11111111111", "10111111101", "10100000101", "00011011000"
+        ]
+      },
+      rocket: {
+        color: "#ff8a65", rows: [
+          "0001000", "0011100", "0111110", "0111110", "1111111",
+          "1111111", "0111110", "0111110", "0101010", "0010100"
+        ]
+      },
+      ufo: {
+        color: "#69f0ae", rows: [
+          "0000111110000", "0011111111100", "1111111111111",
+          "0111111111110", "0011111111100", "0000101010000"
+        ]
+      },
+      walk1: { color: "#ffe14d", rows: ["01100", "11111", "01110", "01110", "10001", "01010"] },
+      walk2: { color: "#ffe14d", rows: ["01100", "11111", "01110", "01110", "01010", "10001"] },
+      star: {
+        color: "#ffe14d", rows: [
+          "00010000", "00010000", "01111100", "11111111",
+          "01111100", "00101000", "01000100", "10000010"
+        ]
+      },
+      heart: {
+        color: "#ff3d9a", rows: [
+          "01100110", "11111111", "11111111", "01111110",
+          "00111100", "00011000"
+        ]
+      },
+      cat: {
+        color: "#b388ff", rows: [
+          "10000001", "11000011", "11111111", "10111101",
+          "10100101", "11111111", "01111110"
+        ]
+      },
+      skull: {
+        color: "#e0e0e0", rows: [
+          "01111110", "11111111", "11011011", "11111111",
+          "10111101", "01100110", "00111100"
+        ]
+      },
+      disk: {
+        color: "#4dd0e1", rows: [
+          "11111111", "10000001", "10111101", "10111101",
+          "10000001", "10011001", "10011001", "11111111"
+        ]
+      }
+    };
+
+    function pixelSVG(rows, color) {
+      var h = rows.length, w = rows[0].length, cell = 6;
+      var rects = "";
+      for (var y = 0; y < h; y++) {
+        for (var x = 0; x < w; x++) {
+          if (rows[y][x] === "1") {
+            rects += '<rect x="' + (x * cell) + '" y="' + (y * cell) + '" width="' + cell + '" height="' + cell + '" fill="' + color + '"/>';
+          }
+        }
+      }
+      return '<svg class="pixel-art" viewBox="0 0 ' + (w * cell) + ' ' + (h * cell) + '" shape-rendering="crispEdges">' + rects + '</svg>';
+    }
+
+    document.querySelectorAll(".art").forEach(function (el) {
+      var g = GRIDS[el.getAttribute("data-sprite")];
+      if (g) el.innerHTML = pixelSVG(g.rows, g.color);
+    });
+
+    var walkerEl = document.getElementById("walker");
+    var walkFrame = 0;
+    function drawWalker() {
+      var key = walkFrame % 2 === 0 ? "walk1" : "walk2";
+      walkerEl.innerHTML = pixelSVG(GRIDS[key].rows, GRIDS[key].color);
+      walkFrame++;
+    }
+    drawWalker();
+    setInterval(drawWalker, 250);
+
+    var top8Grid = document.getElementById("top8Grid");
+    var friendSprites = ["alien", "rocket", "ufo", "star", "heart", "cat", "skull", "disk"];
+    var friendNames = ["pixel_pal", "launchbuddy", "spacecase", "wishlist", "heartcode", "catnap.exe", "undead_dev", "save_often"];
+    friendSprites.forEach(function (key, i) {
+      var card = document.createElement("div");
+      card.className = "top8-card";
+      var avatar = document.createElement("div");
+      avatar.className = "avatar";
+      avatar.innerHTML = pixelSVG(GRIDS[key].rows, GRIDS[key].color);
+      var name = document.createElement("div");
+      name.textContent = friendNames[i];
+      card.appendChild(avatar);
+      card.appendChild(name);
+      top8Grid.appendChild(card);
+    });
+
+    var bouncerEl = document.getElementById("bouncer");
+    var bouncerColors = ["#ff3d9a", "#ffe14d", "#69f0ae", "#4dd0e1", "#b388ff"];
+    var bKey = "disk";
+    bouncerEl.innerHTML = pixelSVG(GRIDS[bKey].rows, bouncerColors[0]);
+    var bx = 40, by = 40, bvx = 2.2, bvy = 1.7, colorIdx = 0;
+    function stepBouncer() {
+      var w = window.innerWidth, h = window.innerHeight;
+      bx += bvx; by += bvy;
+      var hitEdge = false;
+      if (bx <= 0 || bx >= w - 46) { bvx *= -1; hitEdge = true; }
+      if (by <= 0 || by >= h - 46) { bvy *= -1; hitEdge = true; }
+      bx = Math.max(0, Math.min(w - 46, bx));
+      by = Math.max(0, Math.min(h - 46, by));
+      if (hitEdge) {
+        colorIdx = (colorIdx + 1) % bouncerColors.length;
+        bouncerEl.innerHTML = pixelSVG(GRIDS[bKey].rows, bouncerColors[colorIdx]);
+      }
+      bouncerEl.style.transform = "translate(" + bx + "px," + by + "px)";
+      requestAnimationFrame(stepBouncer);
+    }
+    requestAnimationFrame(stepBouncer);
+
+    var lastTrail = 0;
+    var trailChars = ["✦", "✧", "★", "☆", "💫"];
+    var trailColors = ["#ffe14d", "#ff3d9a", "#4dd0e1", "#69f0ae", "#b388ff"];
+    document.addEventListener("mousemove", function (e) {
+      var now = Date.now();
+      if (now - lastTrail < 40) return;
+      lastTrail = now;
+      spawnSpark(e.clientX, e.clientY, 14);
+    });
+
+    function spawnSpark(x, y, size) {
+      var star = document.createElement("span");
+      star.textContent = trailChars[Math.floor(Math.random() * trailChars.length)];
+      star.style.position = "fixed";
+      star.style.left = x + "px";
+      star.style.top = y + "px";
+      star.style.color = trailColors[Math.floor(Math.random() * trailColors.length)];
+      star.style.fontSize = size + "px";
+      star.style.pointerEvents = "none";
+      star.style.zIndex = "9999";
+      star.style.transition = "transform 0.7s ease, opacity 0.7s ease";
+      star.style.transform = "translate(-50%, -50%)";
+      document.body.appendChild(star);
+      var dx = (Math.random() - 0.5) * 60;
+      var dy = -20 - Math.random() * 40;
+      requestAnimationFrame(function () {
+        star.style.transform = "translate(-50%, -50%) translate(" + dx + "px," + dy + "px) scale(0.3)";
+        star.style.opacity = "0";
+      });
+      setTimeout(function () { star.remove(); }, 750);
+    }
+
+    document.addEventListener("click", function (e) {
+      for (var i = 0; i < 10; i++) {
+        spawnSpark(e.clientX, e.clientY, 18);
+      }
+    });
+
+    var npToggle = document.getElementById("npToggle");
+    var npPlaying = false;
+    npToggle.addEventListener("click", function () {
+      npPlaying = !npPlaying;
+      npToggle.textContent = npPlaying ? "❚❚" : "▶";
+    });
+
+    var counterEl = document.getElementById("hitCounter");
+    var counterTarget = 4213;
+    var counterStart = 4200;
+    var counterTimer = setInterval(function () {
+      counterStart++;
+      counterEl.innerHTML = String(counterStart).padStart(6, "0").split("").map(function (d) {
+        return "<span>" + d + "</span>";
+      }).join("");
+      if (counterStart >= counterTarget) clearInterval(counterTimer);
+    }, 120);
+
+    var gbForm = document.getElementById("gbForm");
+    var gbEntries = document.getElementById("gbEntries");
+    var gbError = document.getElementById("gbError");
+    gbForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("gbName").value.trim();
+      var msg = document.getElementById("gbMessage").value.trim();
+      if (!msg) {
+        gbError.style.display = "inline";
+        return;
+      }
+      gbError.style.display = "none";
+      var li = document.createElement("li");
+      var b = document.createElement("b");
+      b.textContent = (name || "anonymous") + ": ";
+      li.appendChild(b);
+      li.appendChild(document.createTextNode(msg));
+      gbEntries.appendChild(li);
+      document.getElementById("gbName").value = "";
+      document.getElementById("gbMessage").value = "";
+    });
+  </script>
+
+</body>
+
+</html>
